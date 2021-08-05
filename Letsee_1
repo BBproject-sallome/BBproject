@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Simple Example</title>
-		<script src="https://developer.letsee.io/api/webar?key=[967f5de31aec8952be7d507d3af6f552cc28d89b01dff538758165d97d21ad84]"></script>
-</head>
-<body>
-<div id="container">
-    Hello, world!
-</div>
-<script>
-    letsee.ready(() => {
-      letsee.start();
-      letsee.addTarget('https://developer.letsee.io/api-tm/target-manager/target-uid/609ca3af398942b60ead2d06')
-        .then(entity => {
-            let xrElement = letsee.createXRElement(document.getElementById('container'));
-            letsee.bindXRElement(xrElement, entity);
-        });
-    });
-    letsee.init({trackerType: 'image'});
-</script>
-</body>
+   <head>
+      <meta charset="UTF-8">
+      <title>Letsee WebAR SDK Test WebApp</title>
+      <script src="https://developer.letsee.io/api/webar?key=148435de458f06c490dfc9129b9734044667b747ae3255ce442072645cba3c5d"></script>
+      <style media="place" type="text/css">
+         #container {
+             -letsee-target: uri('toystory.json');
+             width: 140px;
+             height: 200px;
+             border: 4px solid red;
+         }
+      </style>
+   </head>
+   <body>
+      <div id="container">
+         <button>Hello World</button>
+      </div>
+      <script>
+         letsee.ready(() => {
+                letsee.start();
+            });
+         letsee.init();
+      </script>
+   </body>
 </html>
